@@ -30,4 +30,6 @@ public interface ReportService {
     List<ReportResponseDto> getCorrelationBetweenActionsAndRatings();
     List<ReportResponseDto> getActionsLeadingToHighRatings();
     List<ReportResponseDto> getTimeToFirstActionAfterSignup();
+    
+    Double getTotalRevenue(LocalDate startDate, LocalDate endDate);
 }

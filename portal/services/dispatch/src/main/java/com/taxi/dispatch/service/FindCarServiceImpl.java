@@ -6,6 +6,7 @@ import com.taxi.framework.dispatch.service.AbstractFindCarService;
 import com.taxi.user.logging.UserActionLogger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import io.micrometer.core.annotation.Timed;
 
 @Service
 public class FindCarServiceImpl extends AbstractFindCarService<BaseUserDTO, BaseDriverDTO> {
@@ -20,12 +21,14 @@ public class FindCarServiceImpl extends AbstractFindCarService<BaseUserDTO, Base
         );
     }
 
+    @Timed(value = "find_car.assign_driver", description = "Tracks the time taken to assign a driver to a booking")
     @Override
     public void assignDriver(BaseDriverDTO driverDTO, String bookingId) {
         userActionLogger.logUserAction(driverDTO.getDriverId(), "assign driver to booking " + bookingId);
         // Existing logic for assigning driver
     }
 
+    @Timed(value = "find_car.update_driver_location", description = "Tracks the time taken to update driver location")
     @Override
     public void updateDriverLocation(BaseDriverDTO driverDTO, String location) {
         userActionLogger.logUserAction(driverDTO.getDriverId(), "update driver location to " + location);
