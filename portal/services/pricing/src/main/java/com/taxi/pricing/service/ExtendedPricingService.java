@@ -6,6 +6,8 @@ import com.taxi.pricing.dto.ExtendedBaseResponsePricingDto;
 import com.taxi.user.logging.UserActionLogger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import io.micrometer.core.annotation.Timed;
+
 
 @Service
 public class ExtendedPricingService extends AbstractPricingServiceImpl<ExtendedBasePricingDto, ExtendedBaseResponsePricingDto> {
@@ -14,6 +16,7 @@ public class ExtendedPricingService extends AbstractPricingServiceImpl<ExtendedB
     private UserActionLogger userActionLogger;
 
     @Override
+    @Timed(value = "pricing.get_response", description = "Tracks the time taken to calculate and respond with pricing information")
     public ExtendedBaseResponsePricingDto getResponse(ExtendedBasePricingDto dto) {
         userActionLogger.logUserAction(dto.getUserId(), "calculate price");
         ExtendedBaseResponsePricingDto extendedBaseResponsePricingDto = new ExtendedBaseResponsePricingDto();
