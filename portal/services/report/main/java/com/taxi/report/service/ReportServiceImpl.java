@@ -234,4 +234,11 @@ public class ReportServiceImpl implements ReportService {
                       .map(result -> new ReportResponseDto("Time to first action after signup", result))
                       .collect(Collectors.toList());
     }
+
+    @Override
+    @Timed(value = "report.get_total_revenue", description = "Tracks the time taken to retrieve total revenue value")
+    public Double getTotalRevenue(LocalDate startDate, LocalDate endDate) {
+        List<Booking> bookings = reportRepository.findByBookingDateBetween(startDate, endDate);
+        return bookings.stream().mapToDouble(Booking::getFare).sum();
+    }
 }
