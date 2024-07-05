@@ -4,12 +4,12 @@ Simple software architectures project to design a taxi booking framework.
 
 # Table of Contents
 
-* [Team Members](#team-members)
-* [Description](#description)
-  * [Prioritised Feature List](#prioritised-feature-list)
-  * [Framework Architecture](#framework-architecture)
-    * [Framework Services](#framework-services)
-  * [Component, and Class Diagram](#component-and-class-diagram)
+- [Team Members](#team-members)
+- [Description](#description)
+  - [Prioritised Feature List](#prioritised-feature-list)
+  - [Framework Architecture](#framework-architecture)
+    - [Framework Services](#framework-services)
+  - [Component, and Class Diagram](#component-and-class-diagram)
 
 # Team Members
 
@@ -29,7 +29,7 @@ A defined ranked list of features required for a basic taxi reservation system w
 <center>
 
 | Priority |                 Feature                 |                                                                                                            Description                                                                                                             |
-|:--------:| :-------------------------------------: |:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| :------: | :-------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
 |    1     |           Booking Management            |                          Taxi availability search <br> Taxi selection based on criteria (e.g., location, type) <br> Pickup and drop-off location selection <br> Confirmation and cancellation of bookings                          |
 |    2     |            Taxi Dispatching             |                                                                              Assigning nearest available taxi to passenger <br> Dispatching algorithm                                                                              |
 |    3     |            Fleet Management             |                Vehicle registration and management <br> Real-time tracking of vehicle locations <br> Vehicle availability status management <br> Vehicle maintenance scheduling <br> Optimizing vehicle utilization                |
@@ -82,3 +82,21 @@ The framework is designed using a service oriented architecture with each servic
 ## Component, and Class Diagram
 
 To view the enforced architecture diagram please check the UML.drawio file inside the repository (The classes provided by the framework are colored blue, while the classes that are supposed to be made by the developer are coloured purple).
+
+### Connect database
+
+```sql
+-- Create database
+CREATE DATABASE taxi;
+
+-- Connect to the taxi database
+\c taxi;
+
+-- Create user_logs table
+CREATE TABLE IF NOT EXISTS user_logs (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    action VARCHAR(255) NOT NULL,
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
