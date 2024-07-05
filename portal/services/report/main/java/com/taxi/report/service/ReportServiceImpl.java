@@ -4,6 +4,7 @@ import com.taxi.report.dto.ReportResponseDto;
 import com.taxi.report.repository.ReportRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import io.micrometer.core.annotation.Timed;
 
 import java.util.List;
 import java.util.Map;
