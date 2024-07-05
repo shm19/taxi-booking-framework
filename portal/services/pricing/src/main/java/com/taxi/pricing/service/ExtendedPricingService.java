@@ -3,13 +3,19 @@ package com.taxi.pricing.service;
 import com.taxi.framework.pricing.service.AbstractPricingServiceImpl;
 import com.taxi.pricing.dto.ExtendedBasePricingDto;
 import com.taxi.pricing.dto.ExtendedBaseResponsePricingDto;
+import com.taxi.user.logging.UserActionLogger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ExtendedPricingService extends AbstractPricingServiceImpl<ExtendedBasePricingDto, ExtendedBaseResponsePricingDto> {
 
+    @Autowired
+    private UserActionLogger userActionLogger;
+
     @Override
     public ExtendedBaseResponsePricingDto getResponse(ExtendedBasePricingDto dto) {
+        userActionLogger.logUserAction(dto.getUserId(), "calculate price");
         ExtendedBaseResponsePricingDto extendedBaseResponsePricingDto = new ExtendedBaseResponsePricingDto();
         extendedBaseResponsePricingDto.setTravelPrice(calculateTravelCost(dto));
         extendedBaseResponsePricingDto.setUserId(dto.getUserId());
@@ -29,5 +35,10 @@ public class ExtendedPricingService extends AbstractPricingServiceImpl<ExtendedB
     @Override
     public double checkSnowyCost() {
         return 1.3;
+    }
+
+    public void updatePricing(ExtendedBasePricingDto pricingDto) {
+        userActionLogger.logUserAction(pricingDto.getUserId(), "update pricing");
+        // Implement the logic for updating pricing
     }
 }
