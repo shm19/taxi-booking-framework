@@ -1,10 +1,10 @@
-FROM openjdk:17-jdk-alpine
+FROM openjdk:8-jre-alpine
 
 WORKDIR /app
 
 COPY . .
 
-RUN ./mvnw package
+RUN ./portal/mvnw package
 
 EXPOSE 8080
 

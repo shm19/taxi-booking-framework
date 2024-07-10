@@ -1,9 +1,12 @@
 import requests
 import matplotlib.pyplot as plt
 from datetime import datetime
+from dotenv import dotenv_values
+config = dotenv_values()
+
 
 # Replace with your Prometheus server URL
-prometheus_url = 'http://localhost:9090/api/v1/query_range'
+prometheus_url = config["prometheus_url"]
 query = 'rate(booking_create_time_seconds_sum[1m]) / rate(booking_create_time_seconds_count[1m])'
 
 # Time range for the query
