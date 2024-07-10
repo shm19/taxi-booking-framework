@@ -1,33 +1,17 @@
-package com.taxi.report.dto;
+package com.taxi.service.report.dto;
+
+import com.taxi.framework.report.dto.BaseReportResponseDTO;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Map;
 
-public class ReportResponseDto {
-    private String query;
-    private Map<String, Object> result;
-
-    // Constructors
-    public ReportResponseDto() {}
-
-    public ReportResponseDto(String query, Map<String, Object> result) {
-        this.query = query;
-        this.result = result;
-    }
-
-    // Getters and Setters
-    public String getQuery() {
-        return query;
-    }
-
-    public void setQuery(String query) {
-        this.query = query;
-    }
-
-    public Map<String, Object> getResult() {
-        return result;
-    }
-
-    public void setResult(Map<String, Object> result) {
-        this.result = result;
+@Getter
+@Setter
+@NoArgsConstructor
+public class ReportResponseDTO extends BaseReportResponseDTO {
+    public ReportResponseDTO(String query, Map<String, Object> result) {
+        super(query, result);
     }
 }

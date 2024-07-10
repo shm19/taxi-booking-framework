@@ -1,4 +1,4 @@
-package com.taxi.report.repository;
+package com.taxi.framework.report.repository;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
