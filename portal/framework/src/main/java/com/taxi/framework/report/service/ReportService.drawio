@@ -1,0 +1,41 @@
+<mxGraphModel dx="0" dy="0" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" background="none" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+    <mxCell id="node1" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;AbstractReportService&lt;T&gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ AbstractReportService(): &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;# createReportResponse(String, Map&amp;lt;String, Object&amp;gt;): T&lt;br/&gt;+ getTopActionsBySpecificUser(String): List&amp;lt;T&amp;gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; distributionOfActionsPastMonth: List&amp;lt;T&amp;gt;&lt;br/&gt; dailyActiveUsers: List&amp;lt;T&amp;gt;&lt;br/&gt; timeToFirstActionAfterSignup: List&amp;lt;T&amp;gt;&lt;br/&gt; hourlyBookingTrends: List&amp;lt;T&amp;gt;&lt;br/&gt; actionsGroupedByType: List&amp;lt;T&amp;gt;&lt;br/&gt; totalActions: T&lt;br/&gt; mostActiveUsers: List&amp;lt;T&amp;gt;&lt;br/&gt; avgTimeBetweenActionsPerUser: List&amp;lt;T&amp;gt;&lt;br/&gt; peakActivityHours: List&amp;lt;T&amp;gt;&lt;br/&gt; correlationBetweenActionsAndRatings: List&amp;lt;T&amp;gt;&lt;br/&gt; mostFrequentActionSequences: List&amp;lt;T&amp;gt;&lt;br/&gt; userActionsLastMonth: List&amp;lt;T&amp;gt;&lt;br/&gt; userActionsOverTime: List&amp;lt;T&amp;gt;&lt;br/&gt; weeklyActiveUsers: List&amp;lt;T&amp;gt;&lt;br/&gt; mostActiveDaysOfWeek: List&amp;lt;T&amp;gt;&lt;br/&gt; actionTypesByUser: List&amp;lt;T&amp;gt;&lt;br/&gt; loginAttemptsLastWeek: List&amp;lt;T&amp;gt;&lt;br/&gt; monthlyActiveUsers: List&amp;lt;T&amp;gt;&lt;br/&gt; actionsLeadingToHighRatings: List&amp;lt;T&amp;gt;&lt;br/&gt; avgActionsPerUser: T&lt;br/&gt; bookingsMadeEachDay: List&amp;lt;T&amp;gt;&lt;br/&gt; userRetentionRate: T&lt;br/&gt; actionsLeadingToCancellations: List&amp;lt;T&amp;gt;&lt;br/&gt; usersWithMoreThanTenActions: List&amp;lt;T&amp;gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="-195" y="664" width="390" height="689" as="geometry" />
+    </mxCell>
+    <mxCell id="node0" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;BaseReportResponseDTO&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ BaseReportResponseDTO(String, Map&amp;lt;String, Object&amp;gt;): &lt;br/&gt;+ BaseReportResponseDTO(): &lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;- query: String&lt;br/&gt;- result: Map&amp;lt;String, Object&amp;gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; result: Map&amp;lt;String, Object&amp;gt;&lt;br/&gt; query: String&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="-199" y="-344" width="399" height="185" as="geometry" />
+    </mxCell>
+    <mxCell id="node2" parent="1" vertex="1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br/&gt;&lt;b&gt;ReportService&lt;T&gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt;+ getTopActionsBySpecificUser(String): List&amp;lt;T&amp;gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0 0 0 4px;line-height:1.6;&quot;&gt; distributionOfActionsPastMonth: List&amp;lt;T&amp;gt;&lt;br/&gt; dailyActiveUsers: List&amp;lt;T&amp;gt;&lt;br/&gt; timeToFirstActionAfterSignup: List&amp;lt;T&amp;gt;&lt;br/&gt; hourlyBookingTrends: List&amp;lt;T&amp;gt;&lt;br/&gt; actionsGroupedByType: List&amp;lt;T&amp;gt;&lt;br/&gt; totalActions: T&lt;br/&gt; mostActiveUsers: List&amp;lt;T&amp;gt;&lt;br/&gt; avgTimeBetweenActionsPerUser: List&amp;lt;T&amp;gt;&lt;br/&gt; peakActivityHours: List&amp;lt;T&amp;gt;&lt;br/&gt; correlationBetweenActionsAndRatings: List&amp;lt;T&amp;gt;&lt;br/&gt; mostFrequentActionSequences: List&amp;lt;T&amp;gt;&lt;br/&gt; userActionsLastMonth: List&amp;lt;T&amp;gt;&lt;br/&gt; userActionsOverTime: List&amp;lt;T&amp;gt;&lt;br/&gt; weeklyActiveUsers: List&amp;lt;T&amp;gt;&lt;br/&gt; mostActiveDaysOfWeek: List&amp;lt;T&amp;gt;&lt;br/&gt; actionTypesByUser: List&amp;lt;T&amp;gt;&lt;br/&gt; loginAttemptsLastWeek: List&amp;lt;T&amp;gt;&lt;br/&gt; monthlyActiveUsers: List&amp;lt;T&amp;gt;&lt;br/&gt; actionsLeadingToHighRatings: List&amp;lt;T&amp;gt;&lt;br/&gt; avgActionsPerUser: T&lt;br/&gt; bookingsMadeEachDay: List&amp;lt;T&amp;gt;&lt;br/&gt; userRetentionRate: T&lt;br/&gt; actionsLeadingToCancellations: List&amp;lt;T&amp;gt;&lt;br/&gt; usersWithMoreThanTenActions: List&amp;lt;T&amp;gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=14;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;">
+      <mxGeometry x="-150" y="-72" width="341" height="640" as="geometry" />
+    </mxCell>
+    <mxCell id="edge1" edge="1" value="" parent="1" source="node1" target="node0" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=1;startArrow=none;endArrow=openThin;endSize=12;strokeColor=#595959;exitX=0.250;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="-97" y="628" />
+          <mxPoint x="-180" y="628" />
+          <mxPoint x="-180" y="-92" />
+          <mxPoint x="0" y="-92" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge0" edge="1" value="" parent="1" source="node1" target="node2" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=1;startArrow=none;endArrow=block;endSize=12;strokeColor=#008200;exitX=0.750;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="98" y="628" />
+          <mxPoint x="20" y="628" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="edge2" edge="1" value="" parent="1" source="node2" target="node0" style="html=1;rounded=1;edgeStyle=orthogonalEdgeStyle;dashed=1;startArrow=none;endArrow=openThin;endSize=12;strokeColor=#595959;exitX=0.500;exitY=0.000;exitDx=0;exitDy=0;entryX=0.500;entryY=1.000;entryDx=0;entryDy=0;">
+      <mxGeometry width="50" height="50" relative="1" as="geometry">
+        <Array as="points">
+          <mxPoint x="20" y="-92" />
+          <mxPoint x="0" y="-92" />
+        </Array>
+      </mxGeometry>
+    </mxCell>
+  </root>
+</mxGraphModel>
